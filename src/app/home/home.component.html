@@ -1,3 +1,5 @@
+<app-search></app-search>
+
 <ul>
     <li *ngFor = "let food of foods" >
         <a>
@@ -7,7 +9,23 @@
                 {{food.name}}
             </div>
             <span class="favorite {{food.favorite?'':'not'}}">❤</span>
-            <!-- <star-rating [value] = "5" [totalstars]="5" checkedcolor = "red" uncheckedcolor = "black" size = "24px" [readonly] = "false"></star-rating> -->
+            <!-- <star-rating [value] = "5" [totalstars]="5" checkedcolor = "red" uncheckedcolor = "black" size = "24px" [readonly] = "false" ></star-rating> -->
+            <div class="product-item-footer">
+                <div class="origins">
+                    <span *ngFor = "let origin of food.origins">
+                        {{origin}}
+
+                    </span>
+                </div>
+                <div class="cook-time">
+                    <span>⏰</span>
+                    {{food.cookTime}}
+                </div>
+                
+            </div>
+            <div class="price">
+                {{food.price|currency}}
+            </div>
         </div>
         </a>
 
