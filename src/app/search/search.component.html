@@ -1,6 +1,5 @@
 <div>
     <input type="text" placeholder="Search food from RG 😊 Food Corner" [
-    (ngModel)]="searchItem" (change) = "search">
-    
+    (ngModel)]="searchItem" (change) = "search" [value] = "searchItem">
     <button (click)="search()">Search food</button>
 </div>
