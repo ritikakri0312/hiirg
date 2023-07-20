@@ -1,5 +1,4 @@
 <div>
-    <input type="text" placeholder="Search food from RG 😊 Food Corner" [
-    (ngModel)]="searchItem" (change) = "search" [value] = "searchItem">
+    <input type="text" placeholder="Search food from RG 😊 Food Corner" [(ngModel)]="searchItem" (change) = "search()" >
     <button (click)="search()">Search food</button>
 </div>

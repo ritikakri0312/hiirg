@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { SearchComponent } from './search/search.component';
-import { FormModule } from './form/form.module';
+import { FormsModule } from '@angular/forms';
 
 //  import {RatingModule} from 'ng-starrating';
 
@@ -22,7 +22,8 @@ import { FormModule } from './form/form.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormModule
+    FormsModule
+    
     // RatingModule
   ],
   providers: [],

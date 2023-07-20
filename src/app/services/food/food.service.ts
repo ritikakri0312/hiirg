@@ -14,7 +14,7 @@ export class FoodService {
       {
       id: 1,
       price:10,
-      name: 'pizza pepperoni',
+      name: 'pizza',
       favorite:false,
       star:4.5,
       tags:['fastfood','pizza','lunch'],
@@ -48,7 +48,7 @@ export class FoodService {
        {
         id: 4,
         price:2,
-        name: 'dhosa',
+        name: 'french-fries',
         favorite:true,
         star:3.3,
         tags:['Fastfood','fry'],
@@ -87,7 +87,7 @@ export class FoodService {
         favorite:false,
         star:4.0,
         tags:['slowfood','fry'],
-        imageUrl:'/assets/veg soup.jpg',
+        imageUrl:'/assets/soup.jpg',
         cookTime:'20-30',
         origins:['indian'],
        },
