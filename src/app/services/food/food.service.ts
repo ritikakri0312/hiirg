@@ -7,17 +7,17 @@ import { Foods } from 'src/app/shared/model/food';
 export class FoodService {
 
   constructor() { }
-  getAllFoodByTag(tag:string):Foods[]{
-    return tag == "All"? 
-    this.getAll(): this.getAll().filter(food => food.tags? .includes(tag));
-  }
+  // getAllFoodByTag(tag:string):Foods[]{
+  //   return tag == "All"? 
+  //   this.getAll(): this.getAll().filter(food => food.tags? .includes(tag));
+  // }
 
  
-  getAllTag():Tag[]{
-    return[
-      
-    ]
-  }
+  // getAllTag():Tag[]{
+  //   return[
+
+  //   ]
+  // }
 
   getAll():Foods[]{
     return[
