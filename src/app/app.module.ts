@@ -7,8 +7,9 @@ import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { SearchComponent } from './search/search.component';
 import { FormsModule } from '@angular/forms';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
-//  import {RatingModule} from 'ng-starrating';
+//  import {RatingModule} from 'ngx-bootstrap/rating';
 
 @NgModule({
   declarations: [
@@ -22,8 +23,8 @@ import { FormsModule } from '@angular/forms';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
-    
+    FormsModule,
+    NgbModule,
     // RatingModule
   ],
   providers: [],
