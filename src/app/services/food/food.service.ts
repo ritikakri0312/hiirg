@@ -19,8 +19,8 @@ export class FoodService {
   //   ]
   // }
 
-  getFoodById(id:number){
-      return this.getAll().find(food => food.id == id);
+  getFoodById(id:number):Foods{
+      return this.getAll().find(food => food.id == id)!;
   }
 
   getAll():Foods[]{
