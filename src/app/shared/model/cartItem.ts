@@ -8,7 +8,7 @@ export class CartItem{
     }
     food:Foods;
     quantity:number = 1;
-    get Price():Number{
+    get Price():number{
        return this.food.price *this . quantity;
     }
 }

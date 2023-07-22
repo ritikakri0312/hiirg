@@ -8,6 +8,7 @@ import { HomeComponent } from './home/home.component';
 import { SearchComponent } from './search/search.component';
 import { FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { CartPageComponent } from './cart-page/cart-page.component';
 // import { TagsComponent } from './tags/tags.component';
 
 //  import {RatingModule} from 'ngx-bootstrap/rating';
@@ -18,6 +19,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     HeaderComponent,
     HomeComponent,
     SearchComponent,
+    CartPageComponent,
     // TagsComponent,
    
     
