@@ -9,6 +9,7 @@ import { SearchComponent } from './search/search.component';
 import { FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CartPageComponent } from './cart-page/cart-page.component';
+import { FoodpageComponent } from './foodpage/foodpage.component';
 // import { TagsComponent } from './tags/tags.component';
 
 //  import {RatingModule} from 'ngx-bootstrap/rating';
@@ -20,6 +21,7 @@ import { CartPageComponent } from './cart-page/cart-page.component';
     HomeComponent,
     SearchComponent,
     CartPageComponent,
+    FoodpageComponent,
     // TagsComponent,
    
     
