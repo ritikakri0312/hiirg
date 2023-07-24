@@ -74,7 +74,7 @@ export class FoodService {
        {
         id: 5,
         price:2,
-        name: 'sndwich',
+        name: 'sandwich',
         favorite:false,
         star:3.3,
         tags:['slowfood','fry'],
@@ -86,7 +86,7 @@ export class FoodService {
        {
         id: 6,
         price:9,
-        name: 'sezwan',
+        name: 'Schezwan-noodles',
         favorite:false,
         star:4.0,
         tags:['slowfood','fry'],
