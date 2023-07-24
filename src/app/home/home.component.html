@@ -8,7 +8,7 @@
                 {{food.name}}
             </div>
             <span class="favorite {{food.favorite?'':'not'}}">❤</span>
-            <!-- <star-rating [value] = "5" [totalstars]="5" checkedcolor = "red" uncheckedcolor = "black" size = "24px" [readonly] = "false" ></star-rating> -->
+            <!-- <ngb-rating [max]="5" [(rate)]="starRating" [readonly]="false" ></ngb-rating> -->
             <div class="product-item-footer">
                 <div class="origins">
                     <span *ngFor = "let origin of food.origins">

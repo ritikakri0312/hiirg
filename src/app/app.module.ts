@@ -10,6 +10,7 @@ import { FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CartPageComponent } from './cart-page/cart-page.component';
 import { FoodpageComponent } from './foodpage/foodpage.component';
+import { RattingComponent } from './ratting/ratting.component';
 // import { TagsComponent } from './tags/tags.component';
 
 //  import {RatingModule} from 'ngx-bootstrap/rating';
@@ -22,6 +23,7 @@ import { FoodpageComponent } from './foodpage/foodpage.component';
     SearchComponent,
     CartPageComponent,
     FoodpageComponent,
+    RattingComponent,
     // TagsComponent,
    
     
