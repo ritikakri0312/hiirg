@@ -1,12 +1,12 @@
-.containerjji {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin: 3rem;
+.container {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-wrap: wrap;
+   margin: 3rem;
 }
 
-.containerjji>* {
+.container > * {
     min-width: 25rem;
     max-width: 40rem;
 }
@@ -31,23 +31,23 @@ img {
 
 }
 
-.details .header{
+ .header{
     display: flex;
     justify-content: space-between;
 
 }
 
-.details .name{
+ .name{
     font-size: 2rem;
     font-weight: bold;
 }
 
-.details .favorite{
+ .favorite{
     color: #e72929;
     font-size:1.5rem ;
 }
 
-.details .favorite.not{
+ .favorite.not{
     color: gray;
 }
 .details .origin{
@@ -56,33 +56,41 @@ img {
     margin: 1rem 0;
 }
 
-.details .origin > span{
+.origin span{
+    padding: 0.5rem;
+    font-size: 1.2rem;
+    margin: 0.5rem 0.5rem 0.5rem 0;
+    border-radius: 2rem;
+    background-color: aliceblue;
+}
+
+/* .details .origin > span{
     padding: .5rem;
     font-size:1.2rem ;
     margin: .5rem .5rem .5rem 0;
     border-radius: 2rem;
     background-color:gray;
     color: white;
-}
+} */
 
 .details .cook-time{
     margin: 1rem;
 }
 
 .details .cook-time span{
-    padding: .6rem 2rem .6rem 0;
+    padding: 0.6rem 2rem 0.6rem 0;
     border-radius: 10rem;
     font-size: 1.3rem;
 }
 
 .details .price{
     font-size: 1.8rem;
-    margin: 1rem 1rem 1rem 0;
+    margin: 2rem 2rem 2rem 0;
     color: green;
 }
  .details .price ::before{
     content: "price:  ";
-    color: gray;
+    color: darkgrey;
  }
 
  .details button{
