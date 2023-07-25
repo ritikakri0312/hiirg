@@ -11,7 +11,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CartPageComponent } from './cart-page/cart-page.component';
 import { FoodpageComponent } from './foodpage/foodpage.component';
 import { RattingComponent } from './ratting/ratting.component';
+import { StarRatingComponent } from './star-rating/star-rating.component';
 // import { TagsComponent } from './tags/tags.component';
+
 
 //  import {RatingModule} from 'ngx-bootstrap/rating';
 
@@ -24,6 +26,7 @@ import { RattingComponent } from './ratting/ratting.component';
     CartPageComponent,
     FoodpageComponent,
     RattingComponent,
+    StarRatingComponent,
     // TagsComponent,
    
     

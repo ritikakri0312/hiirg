@@ -1,7 +1,7 @@
 import { Component,OnInit } from '@angular/core';
 import { FoodService } from '../services/food/food.service';
 import { Foods } from '../shared/model/food';
-// import { StarRatingComponent } from 'ng-starrating';
+import { StarRatingComponent } from 'ng-starrating';
 import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-home',
