@@ -23,6 +23,8 @@ export class FoodService {
       return this.getAll().find(food => food.id == id)!;
   }
 
+  
+
   getAll():Foods[]{
     return[
 
@@ -121,13 +123,4 @@ export class FoodService {
      ];
   }
 }
-
-
-// '/assets/pizza.jpg',
-// '/assets/burger.jpg',
-// '/assets/dhosa.jpg',
-// '/assets/french fries.jpg',
-// '/assets/sandwich.jpg',
-// '/assets/sezwan.jpg',
-// '/assets/veg soup.jpg',
-// '/assets/veg-manchurian.jpg'
+ 
