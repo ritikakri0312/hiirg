@@ -7,7 +7,7 @@ ul{
     padding: 0;
 }
 
- li a{
+ul li a{
     height: 22.5rem;
     width: 20rem;
     border: 1px solid whitesmoke;
