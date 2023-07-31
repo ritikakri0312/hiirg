@@ -10,12 +10,12 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
   foods:Foods[] = [];
-  constructor(private fs:FoodService , activatesRoute:ActivatedRoute){ 
+  constructor(private foodService:FoodService , activatesRoute:ActivatedRoute){ 
     activatesRoute.params.subscribe((params) =>{
      if(params.searchTerm)
-        this.foods = this.fs.getAllFoodsBySearchTerm(params.search);
+        this.foods = this.foodService.getAllFoodsBySearchTerm(params.searchTerm);
         else 
-        this.foods = fs.getAll();
+        this.foods =foodService.getAll();
     })
   }
   
