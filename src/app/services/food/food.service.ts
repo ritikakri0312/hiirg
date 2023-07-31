@@ -23,6 +23,10 @@ export class FoodService {
       return this.getAll().find(food => food.id == id)!;
   }
 
+  getAllFoodsBySearchTerm(searchTerm:string){
+    return this.getAll().filter(food => food.name.toLowerCase().includes(searchTerm.toLowerCase()))
+  }
+
   
 
   getAll():Foods[]{
@@ -124,7 +128,7 @@ export class FoodService {
         favorite:true,
         origins:['indian'],
         star:4.0,
-        imageUrl: '/assets/veg-manchurian.jpg',
+        imageUrl: '/assets/manchurian2.jpg',
         tags:['fastfood','fry','pizza'],
         
       },
