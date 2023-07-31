@@ -5,7 +5,7 @@ import { FoodpageComponent } from './foodpage/foodpage.component';
 
 const routes: Routes = [
   {path: '', component:HomeComponent},
-  {path: 'search/:searchItem',component :HomeComponent},
+  // {path: 'search/:searchItem',component :HomeComponent},
   // {path : 'tag/:tags',component:HomeComponent}
   {path: 'food/:id',component:FoodpageComponent}
 ];
