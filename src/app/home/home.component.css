@@ -7,7 +7,7 @@ ul{
     padding: 0;
 }
 
-ul li a{
+ li a{
     height: 22.5rem;
     width: 20rem;
     border: 1px solid whitesmoke;
@@ -41,7 +41,7 @@ li a img {
     font-size: 1.2rem;
 }
 
-.favorite .not{
+.favorite.not{
     color: gray;
 }
 
@@ -52,19 +52,19 @@ li a img {
 .product-item-footer{
     display: flex;
     justify-content:space-between ;
-    align-items: center;
+    align-items: flex-start;
 }
 .origins{
     flex: 9;
 }
 
 .origins span{
-    border-radius:2rem ;
+    border-radius:2rem;
     background-color: whitesmoke;
+    display: inline-block;
     color:grey ;
     font-size: 0.8rem;
     margin-right: 0.3rem;
-    display: inline-block;
     padding:  0  0.5rem;
     margin-top: 0.2rem;
 }
