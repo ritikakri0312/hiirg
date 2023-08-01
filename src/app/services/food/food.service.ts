@@ -14,19 +14,20 @@ export class FoodService {
 
  
   // getAllTag():Tag[]{
-  //   return[
+  //   return[    
 
   //   ]
   // }
 
-  getFoodById(id:number):Foods{
-      return this.getAll().find(food => food.id == id)!;
+  getFoodById(foodId:number):Foods{
+      return this.getAll().find(food => food.id == foodId)?? new Foods();
   }
 
   getAllFoodsBySearchTerm(searchTerm:string){
     return this.getAll().filter(food => food.name.toLowerCase().includes(searchTerm.toLowerCase()))
   }
-
+   
+   
   
 
   getAll():Foods[]{

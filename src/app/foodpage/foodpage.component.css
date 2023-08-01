@@ -6,7 +6,7 @@
    margin: 3rem;
 }
 
-.container > * {
+.container > *{
     min-width: 25rem;
     max-width: 40rem;
 }
@@ -15,42 +15,42 @@ img {
     border-radius: 3rem;
     flex: 1 0;
     object-fit: cover;
-    height: 30rem;
+    height: 35rem;
     margin: 1rem;
 }
 
 .details{
     width: 100%;
     display: flex ;
-    flex-direction:column ;
-    flex:  1 0;
-    border-radius: 3rem;
+    flex-direction: column;
+    flex:1 0;
+    border: 3rem;
     padding: 2rem;
     color: black;
     margin-left: 1rem ;
 
 }
 
- .header{
+.header{
     display: flex;
     justify-content: space-between;
 
 }
 
- .name{
+.name{
     font-size: 2rem;
     font-weight: bold;
 }
 
  .favorite{
     color: #e72929;
-    font-size:1.5rem ;
+    font-size:2.5rem ;
 }
 
  .favorite.not{
     color: gray;
 }
-.details .origin{
+ .origin{
     display: flex;
     flex-wrap:wrap ;
     margin: 1rem 0;
@@ -73,36 +73,36 @@ img {
     color: white;
 } */
 
-.details .cook-time{
-    margin: 1rem;
+
+.cook-time{
+    margin-top: 1rem;
 }
 
-.details .cook-time span{
+.cook-time span{
     padding: 0.6rem 2rem 0.6rem 0;
     border-radius: 10rem;
     font-size: 1.3rem;
 }
-
-.details .price{
+ .price{
     font-size: 1.8rem;
     margin: 2rem 2rem 2rem 0;
     color: green;
 }
- .details .price ::before{
+.price ::before{
     content: "price:  ";
     color: darkgrey;
  }
-
- .details button{
+ button{
     color: white;
     background-color: #e72929;
     border: none;
     font-size: 1.2rem;
     padding: 1 rem;
     outline:none ;
+    border-radius: 10rem;
  }
 
- .details button:hover{
-    opacity:.9 ;
+ button:hover{
+    opacity:0.9 ;
     cursor: pointer;
  }

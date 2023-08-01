@@ -1,16 +1,12 @@
 <div class="container">
     <img [src]="food.imageUrl" [alt]="food.name">
-</div>
+
 <div class="details">
     <div class="header">
         <span class="name">
             {{food.name}}
         </span>
-        <span class="favorite {{food.favorite?'':'not'}}">
-            ❤
-        </span>
-        
-       
+        <span class="favorite {{food.favorite?'':'not'}}">❤ </span>
         <div class="origin">
             <span *ngFor = "let origin of food.origins ">
                 {{origin}}

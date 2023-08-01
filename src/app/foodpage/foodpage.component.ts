@@ -10,11 +10,10 @@ import { FoodService } from '../services/food/food.service';
 })
 export class FoodpageComponent  implements OnInit{
   food!:Foods;
-  constructor( activatedRoute:ActivatedRoute,
-      foodServices:FoodService ){
+  constructor( activatedRoute:ActivatedRoute,foodService:FoodService ){
       activatedRoute.params.subscribe((params)=>{
-       if(params['id'])
-       this.food = foodServices.getFoodById(params['id'])
+       if(params.id)
+       this.food = foodService.getFoodById(params.id)
       })
      }
 
