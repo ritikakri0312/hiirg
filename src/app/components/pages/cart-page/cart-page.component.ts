@@ -12,16 +12,14 @@ import { Cart } from 'src/app/shared/model/Cart';
 
 export class CartPageComponent implements OnInit {
   cart!: Cart;
-   
-  constructor(private cartService: CartService) {
+    constructor(private cartService: CartService) {
     this.cartService.getCartObservable().subscribe((cart: Cart) => {
       this.cart = cart;
     })
   }
 
   ngOnInit():void{
-
-   }
+}
 
    removeFromCart(cartItem:CartItem){
     this.cartService.removeFromCart(cartItem.food.id);
