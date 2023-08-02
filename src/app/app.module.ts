@@ -13,6 +13,7 @@ import { FoodpageComponent } from './foodpage/foodpage.component';
 import { RattingComponent } from './ratting/ratting.component';
 import { StarRatingComponent } from './star-rating/star-rating.component';
 import { TagsComponent } from './components/partials/tags/tags.component';
+import { TitleComponent } from './components/partials/title/title.component';
 // import { TagsComponent } from './tags/tags.component';
 
 
@@ -29,6 +30,7 @@ import { TagsComponent } from './components/partials/tags/tags.component';
     RattingComponent,
     StarRatingComponent,
     TagsComponent,
+    TitleComponent,
     // TagsComponent,
    
     
