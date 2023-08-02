@@ -6,8 +6,8 @@ import { FoodpageComponent } from './foodpage/foodpage.component';
 const routes: Routes = [
   {path: '', component:HomeComponent},
   {path: 'search/:searchTerm',component :HomeComponent},
-  // {path : 'tag/:tags',component:HomeComponent}
-  {path: 'food/:id',component:FoodpageComponent}
+  {path : 'tag/:tag',component:HomeComponent},
+  {path:'food/:id',component:FoodpageComponent}
 ];
 
 @NgModule({

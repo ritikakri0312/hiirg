@@ -56,22 +56,22 @@ img {
     margin: 1rem 0;
 }
 
-.origin span{
+/* .origin span{
     padding: 0.5rem;
     font-size: 1.2rem;
     margin: 0.5rem 0.5rem 0.5rem 0;
     border-radius: 2rem;
     background-color: aliceblue;
-}
+} */
 
-/* .details .origin > span{
+.details .origin > span{
     padding: .5rem;
     font-size:1.2rem ;
     margin: .5rem .5rem .5rem 0;
     border-radius: 2rem;
     background-color:gray;
     color: white;
-} */
+}
 
 
 .cook-time{
@@ -106,3 +106,18 @@ img {
     opacity:0.9 ;
     cursor: pointer;
  }
+
+ div{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+div a{
+    background-color: #f0f0f0;
+    padding: 0.3rem 1rem;
+    margin: 0.2rem 0.15rem;
+    border-radius: 10rem;
+    font-weight: 600;
+    color: blue;
+}

@@ -6,15 +6,25 @@
         <span class="name">
             {{food.name}}
         </span>
-        <span class="favorite {{food.favorite?'':'not'}}">❤ </span>
+        <span class="favorite {{food.favorite?'':'not'}}">❤</span>
+    
+    <div class="rating">
+        <ngb-rating  [max]="5"  [readonly]="false" ></ngb-rating>
+    </div>
         <div class="origin">
             <span *ngFor = "let origin of food.origins ">
                 {{origin}}
             </span>
         </div>
 
+        <div class="tags">
+            <a *ngFor="let tag of food.tags" routerLink="/tag/{{tag}}">
+            {{tag}}
+        </a>
+        </div>
+
         <div class="cook-time">
-            <span>Time to cook about<strong>{{food.cookTime}}</strong>Minutes</span>
+            <span>Time to cook about<strong>{{food.cookTime}}</strong>minutes</span>
         </div>
         <div class="price">
             <span>
@@ -22,8 +32,8 @@
             </span>
 
         </div>
-        <button>Add to Cart</button>
         
-
-    </div>
+        <button>Add to Cart</button>
+         </div>
+</div>
 </div>
