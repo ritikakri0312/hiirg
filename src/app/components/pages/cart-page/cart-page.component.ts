@@ -1,5 +1,6 @@
 import { Component,OnInit } from '@angular/core';
-import { CartService } from 'src/app/cart.service';
+import { CartService } from 'src/app/services/cart.service';
+
 import { CartItem } from 'src/app/shared/CartItem';
 import { Cart } from 'src/app/shared/model/Cart';
 
@@ -15,6 +16,7 @@ export class CartPageComponent implements OnInit {
     constructor(private cartService: CartService) {
     this.cartService.getCartObservable().subscribe((cart: Cart) => {
       this.cart = cart;
+      console.table(this.cart);
     })
   }
 

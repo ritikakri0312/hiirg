@@ -8,12 +8,13 @@ import { HomeComponent } from './home/home.component';
 import { SearchComponent } from './search/search.component';
 import { FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { CartPageComponent } from './cart-page/cart-page.component';
+
 import { FoodpageComponent } from './foodpage/foodpage.component';
 import { RattingComponent } from './ratting/ratting.component';
 import { StarRatingComponent } from './star-rating/star-rating.component';
 import { TagsComponent } from './components/partials/tags/tags.component';
 import { TitleComponent } from './components/partials/title/title.component';
+import { CartPageComponent } from './components/pages/cart-page/cart-page.component';
 // import { TagsComponent } from './tags/tags.component';
 
 
@@ -25,13 +26,14 @@ import { TitleComponent } from './components/partials/title/title.component';
     HeaderComponent,
     HomeComponent,
     SearchComponent,
-    CartPageComponent,
+    
     FoodpageComponent,
     RattingComponent,
     StarRatingComponent,
     TagsComponent,
     TitleComponent,
     // TagsComponent,
+    CartPageComponent,
    
     
   ],
