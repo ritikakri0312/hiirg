@@ -1,4 +1,7 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { FOODS_BY_SEARCH_URL, FOODS_BY_TAG_URL, FOODS_TAGS_URL, FOODS_URL, FOOD_BY_ID_URL } from 'src/app/shared/constants/urls';
 import { Foods } from 'src/app/shared/model/food';
 import { Tag } from 'src/app/shared/model/tag';
 import { sample_tags } from 'src/data ';
@@ -8,37 +11,34 @@ import { sample_tags } from 'src/data ';
 })
 export class FoodService {
 
-  constructor() { }
-  // getAllTags(tag:string):Foods[]{
-  //   return tag == "All"? 
-  //   this.getAll(): this.getAll().filter(food => food.tags? .includes(tag));
-  // }
-
- 
-  // getAllTag():Tag[]{
-  //   return[    
-
-  //   ]
-  // }
-
-  gatAllTags():Tag[]{
-    return sample_tags;
+  constructor(private http:HttpClient) { }
+  
+  
+  
+  getAllFIRST():Observable<Foods[]>{
+   return this.http.get<Foods[]>(FOODS_URL);
   }
 
-  getAllFoodsByTag(tag:string):Foods[]{
-    return tag ==  "All"?
-    this.getAll():
-    this.getAll().filter(food =>food.tags?.includes(tag));
+  
+
+  gatAllTags():Observable<Tag[]>{
+    return this.http.get<Tag[]>(FOODS_TAGS_URL)
+  }
+  //  DOUBT NICHE WALA CODE TIME 6:51
+  getAllFoodsByTag(tag : string): Observable<Foods[]> {
+    return tag ===  "All"?
+    this.getAllFIRST():
+    this.http.get<Foods[]>(FOODS_BY_TAG_URL + tag);
   }
 
   getAllFoodsBySearchTerm(searchTerm:string){
-    return this.getAll().filter(food => food.name.toLowerCase().includes(searchTerm.toLowerCase()))
+    return this.http.get<Foods[]>(FOODS_BY_SEARCH_URL + searchTerm);
   }
    
 
 
-  getFoodById(foodId:number):Foods{
-    return this.getAll().find(food => food.id == foodId)?? new Foods();
+  getFoodById(foodId:number):Observable<Foods>{
+    return this.http.get<Foods>(FOOD_BY_ID_URL + foodId);
 }
    
    

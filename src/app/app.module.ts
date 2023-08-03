@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import {HttpClientModule} from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -15,6 +15,7 @@ import { StarRatingComponent } from './star-rating/star-rating.component';
 import { TagsComponent } from './components/partials/tags/tags.component';
 import { TitleComponent } from './components/partials/title/title.component';
 import { CartPageComponent } from './components/pages/cart-page/cart-page.component';
+import { NotFoundComponent } from './components/partials/not-found/not-found.component';
 // import { TagsComponent } from './tags/tags.component';
 
 
@@ -34,6 +35,7 @@ import { CartPageComponent } from './components/pages/cart-page/cart-page.compon
     TitleComponent,
     // TagsComponent,
     CartPageComponent,
+    NotFoundComponent,
    
     
   ],
@@ -43,6 +45,7 @@ import { CartPageComponent } from './components/pages/cart-page/cart-page.compon
     FormsModule,
     NgbModule,
     // RatingModule
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
