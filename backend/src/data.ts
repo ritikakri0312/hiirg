@@ -1,7 +1,6 @@
-import { Foods } from "./app/shared/model/food";
-import { Tag } from "./app/shared/model/tag";
 
-export const sample_foods: Foods[] = [
+
+export const sample_foods: any[] = [
   {
     id: 1,
     name: 'pizza',
@@ -105,7 +104,7 @@ export const sample_foods: Foods[] = [
    ];
 
 
- export const sample_tags:Tag[]= [
+ export const sample_tags:any[]= [
         { name: 'All', count: 6 },
         { name: 'FastFood', count: 4 },
         { name: 'Pizza', count: 2 },
