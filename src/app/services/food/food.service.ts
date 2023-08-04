@@ -15,11 +15,13 @@ export class FoodService {
   
   
   
-  getAllFIRST():Observable<Foods[]>{
+  getAll1():Observable<Foods[]>{
    return this.http.get<Foods[]>(FOODS_URL);
   }
 
-  
+  getAllFoodsBySearchTerm(searchTerm:string){
+    return this.http.get<Foods[]>(FOODS_BY_SEARCH_URL + searchTerm);
+  }
 
   gatAllTags():Observable<Tag[]>{
     return this.http.get<Tag[]>(FOODS_TAGS_URL)
@@ -27,17 +29,11 @@ export class FoodService {
   //  DOUBT NICHE WALA CODE TIME 6:51
   getAllFoodsByTag(tag : string): Observable<Foods[]> {
     return tag ===  "All"?
-    this.getAllFIRST():
+    this.getAll1():
     this.http.get<Foods[]>(FOODS_BY_TAG_URL + tag);
   }
 
-  getAllFoodsBySearchTerm(searchTerm:string){
-    return this.http.get<Foods[]>(FOODS_BY_SEARCH_URL + searchTerm);
-  }
-   
-
-
-  getFoodById(foodId:number):Observable<Foods>{
+getFoodById(foodId:number):Observable<Foods>{
     return this.http.get<Foods>(FOOD_BY_ID_URL + foodId);
 }
    

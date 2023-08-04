@@ -1,4 +1,4 @@
-const BASE_URL = 'http://localhost:64266';
+const BASE_URL = 'http://localhost:4200';
 
 
 
