@@ -114,3 +114,21 @@ export const sample_foods: any[] = [
         { name: 'Fry', count: 1 },
         { name: 'Soup', count: 1 },
       ]
+
+      export const sample_users: any[] = [
+        {
+          name: "Ritika gupta",
+          email: "ritikakri0312@gmail.com",
+          password:"12345",
+          address: "bihar",
+          isAdmin: true,
+        },
+        {
+          name: "Hemant Ranjan",
+          email:"hemantrj098@gmail.com",
+          password: "678910",
+          address: "pune",
+          isAdmin: false,
+
+        }
+      ]

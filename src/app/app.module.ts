@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { SearchComponent } from './search/search.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { FoodpageComponent } from './foodpage/foodpage.component';
@@ -16,7 +16,9 @@ import { TagsComponent } from './components/partials/tags/tags.component';
 import { TitleComponent } from './components/partials/title/title.component';
 import { CartPageComponent } from './components/pages/cart-page/cart-page.component';
 import { NotFoundComponent } from './components/partials/not-found/not-found.component';
-// import { TagsComponent } from './tags/tags.component';
+import { LoginPageComponent } from './components/pages/login-page/login-page.component';
+import { ToastrModule } from 'ngx-toastr';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations'
 
 
 //  import {RatingModule} from 'ngx-bootstrap/rating';
@@ -36,16 +38,20 @@ import { NotFoundComponent } from './components/partials/not-found/not-found.com
     // TagsComponent,
     CartPageComponent,
     NotFoundComponent,
+    LoginPageComponent,
    
     
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     FormsModule,
     NgbModule,
     // RatingModule
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule,
+    ToastrModule
   ],
   providers: [],
   bootstrap: [AppComponent]

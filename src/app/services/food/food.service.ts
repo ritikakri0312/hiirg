@@ -13,12 +13,10 @@ export class FoodService {
 
   constructor(private http:HttpClient) { }
   
+  getAll():Observable<Foods[]>{
+    return this.http.get<Foods[]>(FOODS_URL)
+    }
   
-  
-  // getAll1():Observable<Foods[]>{
-  //  return this.http.get<Foods[]>(FOODS_URL);
-  // }
-
   getAllFoodsBySearchTerm(searchTerm:string){
     return this.http.get<Foods[]>(FOODS_BY_SEARCH_URL + searchTerm);
   }
@@ -26,7 +24,7 @@ export class FoodService {
   gatAllTags():Observable<Tag[]>{
     return this.http.get<Tag[]>(FOODS_TAGS_URL)
   }
-  //  DOUBT NICHE WALA CODE TIME 6:51
+ 
   getAllFoodsByTag(tag : string): Observable<Foods[]> {
     return tag ===  "All"?
     this.getAll():
@@ -37,8 +35,6 @@ getFoodById(foodId:number):Observable<Foods>{
     return this.http.get<Foods>(FOOD_BY_ID_URL + foodId);
 }
    
-   getAll():Observable<Foods[]>{
-    return this.http.get<Foods[]>(FOODS_URL)
-    }
+  
 }
  

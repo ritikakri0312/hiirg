@@ -12,16 +12,16 @@ import { Observable } from 'rxjs';
 export class HomeComponent implements OnInit {
   foods:Foods[] = [];
   constructor(private foodService:FoodService , activatesRoute:ActivatedRoute){ 
-    let foodObservable:Observable<Foods[]>;
+    let foodsObservable:Observable<Foods[]>;
     activatesRoute.params.subscribe((params) =>{
      if(params.searchTerm)
-           foodObservable = this.foodService.getAllFoodsBySearchTerm(params.searchTerm);
+           foodsObservable = this.foodService.getAllFoodsBySearchTerm(params.searchTerm);
         else if(params.tag)
-        foodObservable = this.foodService.getAllFoodsByTag(params.tag);
+        foodsObservable = this.foodService.getAllFoodsByTag(params.tag);
         else 
-      foodObservable =foodService.getAll();
+      foodsObservable =foodService.getAll();
 
-        foodObservable.subscribe((serverFoods)=>{
+        foodsObservable.subscribe((serverFoods) => {
           this.foods = serverFoods;
         })
     })
