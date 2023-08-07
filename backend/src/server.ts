@@ -10,7 +10,7 @@ origin:["http://localhost:4200"]
 
 }));
 
-app.get("/api/foods",(req,res) =>{
+app.get("/api/foods",(_req,res) =>{
     res.send(sample_foods);
 })
 
@@ -21,7 +21,7 @@ app.get("/api/foods/search/:searchTerm", (req,res) =>{
      res.send(foods);
 })
 
-app.get("/api/Foods/tags",(req,res) =>{
+app.get("/api/Foods/tags",(_req,res) =>{
     res.send(sample_tags);
 })
 

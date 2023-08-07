@@ -3,7 +3,7 @@ import { BehaviorSubject, Observable, tap } from 'rxjs';
 import { User } from '../shared/model/user';
 import { IUserLogin } from '../shared/interfaces/IUserLogin';
 import { HttpClient } from '@angular/common/http';
-// import { USER_LOGIN_URL } from '../shared/constants/urls';
+ import { USER_LOGIN_URL } from '../shared/constants/urls';
 
 @Injectable({
   providedIn: 'root'
@@ -17,17 +17,17 @@ export class UserService {
 
   }
 
-  // login(userLogin:IUserLogin):Observable<User>{
-  //    return this.http.post<User>(USER_LOGIN_URL, userLogin).pipe(
-  //     tap({
-  //       next: (user) => {
+  login(userLogin:IUserLogin):Observable<User>{
+     return this.http.post<User>(USER_LOGIN_URL, userLogin).pipe(
+      tap({
+        next: (user) => {
 
-  //       },
-  //       error:(errorResponse) => {
+        },
+        error:(errorResponse) => {
 
-  //       }
+        }
 
-    //   })
-    //  );
+      })
+     );
   }
-
+}
