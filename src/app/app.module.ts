@@ -18,7 +18,8 @@ import { CartPageComponent } from './components/pages/cart-page/cart-page.compon
 import { NotFoundComponent } from './components/partials/not-found/not-found.component';
 import { LoginPageComponent } from './components/pages/login-page/login-page.component';
 import { ToastrModule } from 'ngx-toastr';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations'
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { InputContainerComponent } from './components/partials/input-container/input-container.component'
 
 
 //  import {RatingModule} from 'ngx-bootstrap/rating';
@@ -39,6 +40,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations'
     CartPageComponent,
     NotFoundComponent,
     LoginPageComponent,
+    InputContainerComponent,
    
     
   ],

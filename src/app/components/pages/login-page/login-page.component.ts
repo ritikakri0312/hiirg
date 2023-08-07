@@ -25,8 +25,7 @@ ngOnInit(): void {
     password:['',Validators.required]
   });
 
-
-  this.returnUrl = this.activatedRoute.snapshot.queryParams.returnUrl;
+ this.returnUrl = this.activatedRoute.snapshot.queryParams.returnUrl;
 }
   get fc(){
     return this.loginForm.controls;
@@ -36,9 +35,7 @@ ngOnInit(): void {
     this.isSubmitted = true;
     if(this.loginForm.invalid) return;
 
-    
-
-    this.userService.login({email:this.fc.email.value,
+   this.userService.login({email:this.fc.email.value,
       password:this.fc.password.value}).subscribe(() =>{
         this.router.navigateByUrl(this.returnUrl);
       });
