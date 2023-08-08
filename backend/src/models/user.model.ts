@@ -2,11 +2,11 @@ import { Schema , model } from "mongoose";
 
 export interface User{
     
-        id: string;
+        id:string;
         email:string;
-        address:string;
-        name:string;
         password:string;
+        name:string;
+        address:string;
         isAdmin:boolean;
     }
 
@@ -17,7 +17,8 @@ export interface User{
         address:{type:  String ,required:true},
         isAdmin:{type: Boolean ,required:true},
         
-    },{
+    },
+    {
         timestamps:true,
         toJSON:{
             virtuals:true

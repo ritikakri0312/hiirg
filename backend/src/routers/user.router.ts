@@ -2,9 +2,11 @@ import {Router} from 'express';
 import { sample_foods, sample_users } from '../data';
 import jwt from 'jsonwebtoken'
 import asynHandler from 'express-async-handler'
-//import { FoodModels } from '../models/food.model';
+import { FoodModels } from '../models/food.model';
 import { UserModel } from '../models/user.model';
-   const router = Router();
+   
+
+const router = Router();
    
    router.get("/seed",asynHandler(
     async (_req,res) => {

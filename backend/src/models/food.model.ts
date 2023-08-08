@@ -2,8 +2,8 @@
 import { Schema , model } from "mongoose";
 
 
-export interface Food{
-    id:number;
+export interface Foods{
+    id:string;
     name:string;
     price:number;
     tags:string[];
@@ -15,7 +15,7 @@ export interface Food{
     }
    
 
-export const FoodSchema = new Schema<Food>(
+export const FoodSchema = new Schema<Foods>(
     
 {
 name:{type:String,required:true},
@@ -26,7 +26,8 @@ star:{type:Number,required:true},
 imageUrl:{type:String,required:true},
 origins:{type:[String],required:true},
 cookTime:{type:String,required:true}
-},{
+},
+{
 
 toJSON:{
     virtuals: true
@@ -42,4 +43,4 @@ timestamps:true
 
 );
 
-export const FoodModels = model<Food>('food', FoodSchema);
+export const FoodModels = model<Foods>('food', FoodSchema);
