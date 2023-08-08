@@ -21,7 +21,8 @@ import { ToastrModule } from 'ngx-toastr';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { InputContainerComponent } from './components/partials/input-container/input-container.component';
 import { InputValidationComponent } from './components/partials/input-validation/input-validation.component';
-import { TextInputComponent } from './components/partials/text-input/text-input.component'
+import { TextInputComponent } from './components/partials/text-input/text-input.component';
+import { DefaultButtonComponent } from './components/partials/default-button/default-button.component'
 
 
 //  import {RatingModule} from 'ngx-bootstrap/rating';
@@ -45,6 +46,7 @@ import { TextInputComponent } from './components/partials/text-input/text-input.
     InputContainerComponent,
     InputValidationComponent,
     TextInputComponent,
+    DefaultButtonComponent,
    
     
   ],
