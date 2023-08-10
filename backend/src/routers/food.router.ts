@@ -8,6 +8,7 @@ const router = Router();
 router.get("/seed",asyncHandler(
   async (_req,res) => {
     const foodsCount = await FoodModels.countDocuments();
+    console.log(foodsCount);
     if (foodsCount>0){
         res.send("Seed is already done!");
         return;
