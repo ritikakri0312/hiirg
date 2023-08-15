@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
+import { HeaderComponent } from './components/partials/header/header.component';
 import { HomeComponent } from './home/home.component';
 import { SearchComponent } from './search/search.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -80,8 +80,7 @@ import { AuthInterceptor } from './auth/guards/auth.interceptor';
   providers: [
     
     { provide: HTTP_INTERCEPTORS,useClass:AuthInterceptor,multi:true},
- 
-     { provide: HTTP_INTERCEPTORS,useClass:LoadingInterceptor,multi:true}
+    { provide: HTTP_INTERCEPTORS,useClass:LoadingInterceptor,multi:true}
   ],
   bootstrap: [AppComponent]
 })

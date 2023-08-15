@@ -9,4 +9,4 @@ export class Foods{
     origins!:string[];
     cookTime!:string;
    
-}
+}  

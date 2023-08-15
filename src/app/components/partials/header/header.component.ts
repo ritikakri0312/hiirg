@@ -1,7 +1,7 @@
 import { Component,OnInit } from '@angular/core';
 import { CartService } from 'src/app/services/cart.service';
-import { UserService } from '../services/user.service';
-import { User } from '../shared/model/user';
+import { UserService } from '../../../services/user.service';
+import { User } from '../../../shared/model/user';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',

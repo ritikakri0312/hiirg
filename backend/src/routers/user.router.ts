@@ -50,13 +50,14 @@ const router = Router();
       }
        const encryptedPassword = await bcrypt.hash(password,10);
        const newUser:User = {
-        id: '',
-        name,
-        email: email.tiLowerCase(),
-        password: encryptedPassword,
-        address,
-        isAdmin:false
-      }
+         id: '',
+         name,
+         email: email.tiLowerCase(),
+         password: encryptedPassword,
+         address,
+         isAdmin: false,
+         token: ''
+       }
 
       const dbUser = await UserModel.create(newUser);
       res.send(generateTokenResponse(dbUser));
@@ -64,7 +65,7 @@ const router = Router();
     }
    ))
   
-    const generateTokenResponse =(user:any) =>{
+    const generateTokenResponse = (user:User) =>{
      const token = jwt.sign({
       id: user.id,email:user.email,isAdmin:user.isAdmin
      },"SomeRandomText",{
@@ -72,8 +73,14 @@ const router = Router();
      });
     
     
-     user.token = token;
-     return user;
+     return{
+      id:user.id,
+      email: user.email,
+      name:user.name,
+      address:user.address,
+      isAdmin: user.isAdmin,
+      token:token
+     };
   
     }
 
