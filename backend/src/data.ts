@@ -1,3 +1,6 @@
+
+import { Foods } from "./models/food.model";
+
 export const sample_foods: any[] = [
   {
     
