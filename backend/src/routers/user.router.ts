@@ -66,7 +66,7 @@ const router = Router();
   
     const generateTokenResponse =(user:any) =>{
      const token = jwt.sign({
-      email:user.email,isAdmin:user.isAdmin
+      id: user.id,email:user.email,isAdmin:user.isAdmin
      },"SomeRandomText",{
       expiresIn:"30d"
      });
