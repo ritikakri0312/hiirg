@@ -18,11 +18,11 @@ asyncHander(async (req:any, res:any)=>{
     }
 
   await OrderModel.deleteOne({
-    user: req.user.id,
+    user: req.body.name,
     status:OrderStatus.NEW
   });
 
-  const  newOrder = new OrderModel({...requestOrder,user:req.user.id});
+  const  newOrder = new OrderModel({...requestOrder,user:req.body.name});
   await newOrder.save();
   res.send(newOrder);
 
