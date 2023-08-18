@@ -1,4 +1,4 @@
-.container {
+/* .container {
    display: flex;
    justify-content: center;
    align-items: center;
@@ -120,4 +120,4 @@ div a{
     border-radius: 10rem;
     font-weight: 600;
     color: blue;
-}
+} 
