@@ -23,8 +23,8 @@ export interface OrderItem{
 export const OrderItemSchema = new Schema<OrderItem>(
     {
         food:{type: FoodSchema, required: true},
-        price:{type: Number, required:true},
-        quantity:{type: Number, required: true}
+        price:{ type: Number, required:true},
+        quantity: {type: Number, required: true}
     }
 );
 
@@ -40,6 +40,7 @@ export interface Order{
     user: Types.ObjectId;
     createdAt: Date;
     updatedAt: Date
+  
   }
 
   const orderSchema = new Schema<Order>({
@@ -61,5 +62,4 @@ export interface Order{
       }
   });
 
-
-export const OrderModel = model('order',orderSchema);
+  export const OrderModel = model('order', orderSchema);

@@ -1,6 +1,6 @@
-import { Foods } from "./model/food";
+import { Food} from "./models/food";
 export class CartItem{
-   constructor(public food:Foods){ }
+   constructor(public food:Food){ }
  quantity:number = 1;
    price:number = this.food.price;
  }

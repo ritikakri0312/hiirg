@@ -1,5 +1,3 @@
-// 
-
 import { Injectable } from '@angular/core';
 import { LatLngLiteral } from 'leaflet';
 import { Observable } from 'rxjs';

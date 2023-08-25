@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component ,OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { UserService } from 'src/app/services/user.service';
@@ -10,13 +10,13 @@ import { passwordMatchValidator } from 'src/app/shared/validators/password_match
   templateUrl: './register-page.component.html',
   styleUrls: ['./register-page.component.css']
 })
-export class RegisterPageComponent {
+export class RegisterPageComponent implements OnInit{
 
   registerForm!:FormGroup;
   isSubmitted = false;
   returnUrl = '';
   constructor(
-    private  formBuilder : FormBuilder,
+    private formBuilder : FormBuilder,
     private userService : UserService,
     private activatedRoute: ActivatedRoute,
     private router: Router
@@ -31,7 +31,9 @@ export class RegisterPageComponent {
     },{
       Validators:passwordMatchValidator('password','confirmPassword')
     });
-       this.returnUrl = this.activatedRoute.snapshot.queryParams.returnUrl;
+       
+    
+    this.returnUrl = this.activatedRoute.snapshot.queryParams.returnUrl;
 
 
   }
@@ -42,7 +44,7 @@ export class RegisterPageComponent {
 
   submit(){
     this.isSubmitted = true;
-    if(this.registerForm. invalid)return;
+    if(this.registerForm.invalid)return;
 
     const fv = this.registerForm.value;
      

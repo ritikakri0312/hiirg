@@ -37,11 +37,6 @@ nav ul li a{
     display: inline-block;
 
 }
-
-/* ul a{
-    padding: 1rem;
-    display: inline-block;
-} */
 a span{
      background: #ff4d4d;
      color: white;
@@ -54,10 +49,8 @@ a span{
     position: relative;
 }
 
-/* nav ul {
-    list-style-type: none;
-    margin: 0;
-} */
+
+    
 .menu{
     position: absolute;
     z-index: 1;
@@ -73,8 +66,3 @@ a span{
     width: 100%;
     min-width: 8rem;
 }
-
-/* nav ul li a{
-    padding: 1em;
-    display: inline-block;
-} */

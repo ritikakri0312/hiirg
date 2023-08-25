@@ -1,8 +1,7 @@
 import { Schema , model } from "mongoose";
 
-
 export interface Foods{              
-    id:number;                                              
+    id:string;                                              
     name:string;
     price:number;
     tags:string[];
@@ -12,20 +11,6 @@ export interface Foods{
     origins:string[];
     cookTime:string;
     }
-
-    // export class Foods{
-    //     id!:number;
-    //     name!:string;
-    //     price!:number;
-    //     tags?:string[];
-    //     favorite:boolean = false;
-    //     star:number = 0;
-    //     imageUrl!:string;
-    //     origins!:string[];
-    //     cookTime!:string;
-       
-    // }
-   
 
 export const FoodSchema = new Schema<Foods>(
     

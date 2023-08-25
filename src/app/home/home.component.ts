@@ -1,6 +1,6 @@
 import { Component,OnInit } from '@angular/core';
 import { FoodService } from '../services/food/food.service';
-import { Foods } from '../shared/model/food';
+import { Food } from '../shared/models/food';
 import { StarRatingComponent } from 'ng-starrating';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
@@ -10,9 +10,9 @@ import { Observable } from 'rxjs';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  foods:Foods[] = [];
+  foods:Food[] = [];
   constructor(private foodService:FoodService , activatesRoute:ActivatedRoute){ 
-    let foodsObservable:Observable<Foods[]>;
+    let foodsObservable:Observable<Food[]>;
     activatesRoute.params.subscribe((params) =>{
      if(params.searchTerm)
            foodsObservable = this.foodService.getAllFoodsBySearchTerm(params.searchTerm);
@@ -29,16 +29,7 @@ export class HomeComponent implements OnInit {
   
   
   ngOnInit(): void {
-    // this.router.params.subscribe(params =>{
-    //   if(params['searchItem'])
-    //   this.foods = this.fs.getAll().filter(food => food.name.toLowerCase().includes(params['searchItem'].toLowerCase()));
-    //   // else if(params['tag'])
-    //   // this.foods = this.fs.getAllFoodByTag(params['tag'])
-    //   else 
-    //   this.foods = this.fs.getAll();
-    // })
-
-    
+  
      
   }
 

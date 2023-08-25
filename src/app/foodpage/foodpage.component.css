@@ -1,4 +1,4 @@
-/* .container {
+.container {
    display: flex;
    justify-content: center;
    align-items: center;
@@ -56,18 +56,10 @@ img {
     margin: 1rem 0;
 }
 
-/* .origin span{
+.origin span{
     padding: 0.5rem;
-    font-size: 1.2rem;
+    font-size: 1.2rem ;
     margin: 0.5rem 0.5rem 0.5rem 0;
-    border-radius: 2rem;
-    background-color: aliceblue;
-} */
-
-.details .origin > span{
-    padding: .5rem;
-    font-size:1.2rem ;
-    margin: .5rem .5rem .5rem 0;
     border-radius: 2rem;
     background-color:gray;
     color: white;
@@ -120,4 +112,4 @@ div a{
     border-radius: 10rem;
     font-weight: 600;
     color: blue;
-} 
+}

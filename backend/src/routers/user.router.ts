@@ -1,10 +1,8 @@
 import {Router} from 'express';
-import { sample_foods, sample_users } from '../data';
+import { sample_users } from '../data';
 import jwt from 'jsonwebtoken'
 import asynHandler from 'express-async-handler'
-import { FoodModels } from '../models/food.model';
 import { User, UserModel } from '../models/user.model';
-import expressAsyncHandler from 'express-async-handler';
 import { HTTP_BAD_REQUEST } from '../constants/http_status';
 import bcrypt from 'bcryptjs';
 
@@ -52,11 +50,11 @@ const router = Router();
        const newUser:User = {
          id: '',
          name,
-         email: email.tiLowerCase(),
+         email: email.toLowerCase(),
          password: encryptedPassword,
          address,
          isAdmin: false,
-         token: ''
+        
        }
 
       const dbUser = await UserModel.create(newUser);
@@ -83,5 +81,4 @@ const router = Router();
      };
   
     }
-
-    export default router;
+ export default router;

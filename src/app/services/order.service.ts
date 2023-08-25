@@ -2,7 +2,7 @@
 // import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { ORDER_CREATE_URL, ORDER_NEW_FOR_CURRENT_USER_URL } from '../shared/constants/urls';
-import { Order } from '../shared/model/Order';
+import { Order } from '../shared/models/Order';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 

@@ -24,7 +24,7 @@ ngOnInit(): void {
     email:['',[Validators.required,Validators.email]],
     password:['',Validators.required]
   });
-
+//snapshot latest value of route
  this.returnUrl = this.activatedRoute.snapshot.queryParams.returnUrl;
 }
   get fc(){

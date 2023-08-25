@@ -8,7 +8,7 @@ const router = Router();
 router.get("/seed",asyncHandler(
   async (_req,res) => {
     const foodsCount = await FoodModels.countDocuments();
-    console.log(foodsCount);
+    
     if (foodsCount>0){
         res.send("Seed is already done!");
         return;
@@ -20,7 +20,7 @@ router.get("/seed",asyncHandler(
 
 
 router.get("/", asyncHandler(
-    async (req,res) =>{
+    async (_req,res) =>{
         const foods = await FoodModels.find();
         res.send(foods);
     }
@@ -83,5 +83,4 @@ router.get("/:foodId",asyncHandler(
   }
 ))
 
-
-  export default router;
+ export default router;

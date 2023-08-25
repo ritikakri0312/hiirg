@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { Cart } from '../shared/model/Cart';
-import { Foods } from '../shared/model/food';
-import { CartItem } from '../shared/model/cartItem';
+import { Cart } from '../shared/models/Cart';
+import { Food } from '../shared/models/food';
+import { CartItem } from '../shared/models/cartItem';
 import { BehaviorSubject, Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
@@ -10,7 +10,7 @@ export class CartService {
   private cart:Cart = this.getCartFromLocalStorage();
   private cartSubject: BehaviorSubject<Cart> = new BehaviorSubject(this.cart);
   constructor(){}
-   addToCart(food:Foods):void{
+   addToCart(food:Food):void{
     let cartItem = this.cart.items
     .find(item => item.food.id ===food.id)
     if(cartItem){

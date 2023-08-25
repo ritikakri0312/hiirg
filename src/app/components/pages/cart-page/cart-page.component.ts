@@ -2,7 +2,7 @@ import { Component,OnInit } from '@angular/core';
 import { CartService } from 'src/app/services/cart.service';
 
 import { CartItem } from 'src/app/shared/CartItem';
-import { Cart } from 'src/app/shared/model/Cart';
+import { Cart } from 'src/app/shared/models/Cart';
 
 
 @Component({

@@ -6,9 +6,7 @@ import { Component , EventEmitter, Input , OnInit, Output } from '@angular/core'
   styleUrls: ['./default-button.component.css']
 })
 export class DefaultButtonComponent  implements OnInit {
-ngOnInit(): void {
-  
-}
+
 
 @Input()
 type : 'submit' | 'button' = 'submit';
@@ -32,6 +30,14 @@ widthRem = 12;
 
 @Output()
 onClick = new EventEmitter()
+
+
+constructor(){}
+
+
+ngOnInit(): void {
+  
+}
 
 
 }

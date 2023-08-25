@@ -3,7 +3,7 @@ import { Foods } from "./models/food.model";
 
 export const sample_foods: any[] = [
   {
-    
+    id:'1',
     name: 'pizza',
     price:10,
     cookTime:'10-20',
@@ -15,7 +15,7 @@ export const sample_foods: any[] = [
     },
     
     {
-      
+      id:'2',
       name: 'burger',
       price:20,
       cookTime:'20-30',
@@ -27,7 +27,7 @@ export const sample_foods: any[] = [
       },
 
      {
-      
+      id:'3',
       name: 'dhosa',
       price:3,
       cookTime:'10-15',
@@ -38,7 +38,7 @@ export const sample_foods: any[] = [
       tags:['Fastfood','lunch'],
       },
      {
-      
+      id:'4',
       name: 'french-fries',
       price:2,
       cookTime:'15-20',
@@ -49,7 +49,7 @@ export const sample_foods: any[] = [
       tags:['Fastfood','fry'],
      },
      {
-      
+      id:'5',
       name: 'sandwich',
       price:2,
       cookTime:'40-50',
@@ -63,7 +63,7 @@ export const sample_foods: any[] = [
      },
 
      {
-      
+      id:'6',
       name: 'Schezwan-noodles',
       price:9,
       cookTime:'40-50',
@@ -76,7 +76,7 @@ export const sample_foods: any[] = [
       },
 
      {
-     
+      id:'7',
       name: 'soup',
       price:10,
       cookTime:'20-30',
@@ -91,7 +91,7 @@ export const sample_foods: any[] = [
      },
 
      {
-      
+      id:'8',
       name: 'manchurian',
       price:5,
       cookTime:'10-15',
@@ -132,4 +132,4 @@ export const sample_foods: any[] = [
           isAdmin: false,
 
         }
-      ]
+      ];
