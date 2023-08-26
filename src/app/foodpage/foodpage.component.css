@@ -50,13 +50,13 @@ img {
  .favorite.not{
     color: gray;
 }
- .origin{
+.origins{
     display: flex;
     flex-wrap:wrap ;
     margin: 1rem 0;
 }
 
-.origin span{
+.origins span{
     padding: 0.5rem;
     font-size: 1.2rem ;
     margin: 0.5rem 0.5rem 0.5rem 0;
@@ -80,7 +80,7 @@ img {
     margin: 2rem 2rem 2rem 0;
     color: green;
 }
-.price ::before{
+.price::before{
     content: "price:  ";
     color: darkgrey;
  }
@@ -99,13 +99,12 @@ img {
     cursor: pointer;
  }
 
- div{
+.tags{
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
 }
 
-div a{
+.tags a{
     background-color: #f0f0f0;
     padding: 0.3rem 1rem;
     margin: 0.2rem 0.15rem;

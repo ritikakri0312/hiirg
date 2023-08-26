@@ -1,7 +1,7 @@
 import { Component,OnInit } from '@angular/core';
 import { CartService } from 'src/app/services/cart.service';
 
-import { CartItem } from 'src/app/shared/CartItem';
+import { CartItem } from 'src/app/shared/models/CartItem';
 import { Cart } from 'src/app/shared/models/Cart';
 
 

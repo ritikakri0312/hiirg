@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Cart } from '../shared/models/Cart';
 import { Food } from '../shared/models/food';
-import { CartItem } from '../shared/models/cartItem';
+import { CartItem } from '../shared/models/CartItem';
 import { BehaviorSubject, Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
@@ -19,15 +19,15 @@ export class CartService {
     this.cart.items.push(new CartItem(food));
      this.setCartToLocalStorage();
    }
-   removeFromCart(foodId:number):void{
+   removeFromCart(foodId:string):void{
     this.cart.items = this.cart.items
     .filter(item => item.food.id!=foodId)
     this.setCartToLocalStorage();
    }
 
-   changeQuantity(foodId:number,quantity:number ){
+   changeQuantity(foodId:string,quantity:number ){
     let cartItem = this.cart.items
-    .find(item => item . food.id === foodId);
+    .find(item => item.food.id === foodId);
     if(!cartItem) return;
     cartItem.quantity = quantity;
     cartItem.price = quantity * cartItem.food.price;

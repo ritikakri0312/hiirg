@@ -11,11 +11,11 @@ import { CartService } from '../services/cart.service';
 })
 export class FoodpageComponent  implements OnInit{
   food!:Food;
-  constructor( activatedRoute:ActivatedRoute,foodServices:FoodService ,
+  constructor( activatedRoute:ActivatedRoute,foodService:FoodService ,
    private cartService:CartService,private router:Router){
       activatedRoute.params.subscribe((params)=>{
        if(params.id)
-        foodServices.getFoodById(params.id).subscribe(serverFood =>{
+        foodService.getFoodById(params.id).subscribe((serverFood: Food) =>{
              this.food = serverFood;  
         });
       })
