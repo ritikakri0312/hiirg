@@ -25,7 +25,7 @@ export class CartService {
     this.setCartToLocalStorage();
    }
 
-   changeQuantity(foodId:string,quantity:number ){
+   changeQuantity(foodId:string,quantity:number){
     let cartItem = this.cart.items
     .find(item => item.food.id === foodId);
     if(!cartItem) return;
@@ -35,6 +35,8 @@ export class CartService {
    }
    clearCart(){
     this.cart = new Cart();
+    this.setCartToLocalStorage();
+
    }
    getCartObservable():Observable<Cart>{
     return this.cartSubject.asObservable();
