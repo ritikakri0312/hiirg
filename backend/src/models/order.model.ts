@@ -1,6 +1,6 @@
 import {model, Schema, Types} from 'mongoose';
 import { OrderStatus } from '../constants/order_status';
-import { Foods, FoodSchema } from './food.model';
+import { Food, FoodSchema } from './food.model';
 
 export interface LatLng{
     lat: string;
@@ -15,7 +15,7 @@ export const LatLngSchema = new Schema<LatLng>(
 );
 
 export interface OrderItem{
-    food: Foods;
+    food: Food;
     price: number;
     quantity: number;
 }

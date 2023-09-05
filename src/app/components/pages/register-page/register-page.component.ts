@@ -14,7 +14,7 @@ export class RegisterPageComponent implements OnInit{
 
   registerForm!:FormGroup;
   isSubmitted = false;
-  returnUrl = '';
+  returnUrl = '';   
   constructor(
     private formBuilder : FormBuilder,
     private userService : UserService,
@@ -22,19 +22,19 @@ export class RegisterPageComponent implements OnInit{
     private router: Router
     ){}
   ngOnInit(): void{
-    this . registerForm = this . formBuilder .group({
+    this . registerForm = this.formBuilder. group({
       name : ['',[Validators.required,Validators.minLength(5)]],
       email:['',[Validators.required,Validators.email]],
       password:['',[Validators.required,Validators.minLength(5)]],
       confirmPassword:['',Validators.required],
       address:['',[Validators.required,Validators.minLength(10)]]
     },{
-      Validators:passwordMatchValidator('password','confirmPassword')
+      validators : passwordMatchValidator('password','confirmPassword')
     });
        
     
     this.returnUrl = this.activatedRoute.snapshot.queryParams.returnUrl;
-
+     
 
   }
 

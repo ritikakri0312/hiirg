@@ -63,7 +63,7 @@ router.get("/tags",asyncHandler(
         }
 
         tags.unshift(all);
-    res.send(sample_tags);
+    res.send(tags);
 }
 ))
 

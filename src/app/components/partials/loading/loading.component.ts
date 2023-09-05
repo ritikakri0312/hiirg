@@ -7,8 +7,9 @@ import { LoadingService } from 'src/app/services/loading.service';
   styleUrls: ['./loading.component.css']
 })
 export class LoadingComponent implements OnInit {
-   isLoading!:  boolean;
-
+   
+  
+  isLoading!:  boolean;
    constructor(loadingSearvice: LoadingService){
     loadingSearvice.isLoading.subscribe((isLoading)=>{
       this.isLoading = isLoading;
@@ -16,11 +17,7 @@ export class LoadingComponent implements OnInit {
    
    }
 
-
-
-
-  
-  ngOnInit(): void{
+ngOnInit(): void{
 
   }
 }

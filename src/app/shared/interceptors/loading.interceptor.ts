@@ -8,7 +8,7 @@ import {
 } from '@angular/common/http';
 import { Observable, tap } from 'rxjs';
 import { LoadingService } from 'src/app/services/loading.service';
-var pendingRequest = 0;
+var pendingRequests = 0;
 @Injectable()
 export class LoadingInterceptor implements HttpInterceptor {
 
@@ -16,8 +16,9 @@ export class LoadingInterceptor implements HttpInterceptor {
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
    this.loadingService.showLoading();
-   pendingRequest = pendingRequest + 1 ;
-    return next.handle(request).pipe(
+   pendingRequests = pendingRequests + 1 ;
+    
+   return next.handle(request).pipe(
       tap({
         next:(event)=>{
           if(event.type === HttpEventType.Response){
@@ -31,8 +32,8 @@ export class LoadingInterceptor implements HttpInterceptor {
     );
   }
   handleHideLoading(){
-    pendingRequest = pendingRequest -1;
-    if(pendingRequest === 0)
+    pendingRequests = pendingRequests -1;
+    if(pendingRequests === 0)
     this.loadingService.hideLoading();
   }
   
