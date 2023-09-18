@@ -4,7 +4,7 @@ import { LocationService } from 'src/app/services/location.service';
 import { Order } from 'src/app/shared/models/Order';
 // import { order } from 'src/app/shared/models/Order';
 
-@Component({
+@Component({       
   selector: 'map',
   templateUrl: './map.component.html',
   styleUrls: ['./map.component.css']
