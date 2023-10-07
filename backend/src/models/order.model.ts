@@ -40,7 +40,6 @@ export interface Order{
     user: Types.ObjectId;
     createdAt: Date;
     updatedAt: Date
-  
   }
 
   const orderSchema = new Schema<Order>({
