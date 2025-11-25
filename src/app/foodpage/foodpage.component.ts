@@ -11,8 +11,12 @@ import { CartService } from '../services/cart.service';
 })
 export class FoodpageComponent  implements OnInit{
   food!:Food;
-  constructor( activatedRoute:ActivatedRoute,foodService:FoodService ,
-   private cartService:CartService,private router:Router){
+  constructor( 
+    activatedRoute:ActivatedRoute,
+    foodService:FoodService,
+    private cartService:CartService,
+    private router:Router
+  ){
       activatedRoute.params.subscribe((params)=>{
        if(params.id)
         foodService.getFoodById(params.id).subscribe((serverFood: Food) =>{

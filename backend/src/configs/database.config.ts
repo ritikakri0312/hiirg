@@ -6,6 +6,6 @@ export const dbConnect = () => {
         useUnifiedTopology: true
     } as ConnectOptions).then(
         () => console.log("connect successfully"),
-        (error) => console.log(error)
+        (error) => console.log("got error:"+ error)
     )
 }
