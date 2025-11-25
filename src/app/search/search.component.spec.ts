@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SearchComponent } from './search.component';
+import { Router } from '@angular/router';
+
 
 describe('SearchComponent', () => {
   let component: SearchComponent;

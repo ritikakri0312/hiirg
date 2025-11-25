@@ -1,44 +1,45 @@
 <app-not-found
-[visible]="!food"
-notFoundMessage = "Food Not Found"
-resetLinkText="Back to HomePage"></app-not-found>
+    [visible]="!food"
+    notFoundMessage="Food Not Found"
+    resetLinkText="Back to HomePage">
+</app-not-found>
 
-<div *ngIf="food" class="container">
-    <img [src]="food.imageUrl" [alt]="food.name">
+<div *ngIf="food" class="food-container">
 
-<div class="details">
+  <div class="image-section">
+    <img [src]="food.imageUrl" [alt]="food.name" />
+  </div>
+
+  <div class="details-section">
+
     <div class="header">
-        <span class="name">
-            {{food.name}}
-        </span>
-        <span class="favorite {{food.favorite?'':'not'}}">❤</span>
-    
-    <div class="rating">
-        <ngb-rating  [max]="5"  [readonly]="false" ></ngb-rating>
+      <span class="name">{{ food.name }}</span>
+      <span class="favorite {{ food.favorite ? '' : 'not' }}">❤</span>
     </div>
-        <div class="origins">
-            <span *ngFor = "let origin of food.origins ">
-                {{origin}}
-            </span>
-        </div>
 
-        <div class="tags">
-            <a *ngFor="let tag of food.tags" routerLink="/tag/{{tag}}">
-            {{tag}}
-        </a>
-        </div>
+    <div class="rating">
+      <ngb-rating [max]="5" [readonly]="false"></ngb-rating>
+    </div>
 
-        <div class="cook-time">
-            <span>Time to cook about<strong>{{food.cookTime}}</strong>minutes</span>
-        </div>
-        <div class="price">
-            <span>
-                {{food.price|currency}}
-            </span>
+    <div class="origins">
+      <span *ngFor="let origin of food.origins">{{ origin }}</span>
+    </div>
 
-        </div>
-        
-        <button (click)="addToCart()">Add to Cart</button>
-         </div>
-</div>
+    <div class="tags">
+      <a *ngFor="let tag of food.tags" routerLink="/tag/{{ tag }}">
+        {{ tag }}
+      </a>
+    </div>
+
+    <div class="cook-time">
+      Time to cook about <strong>{{ food.cookTime }}</strong> minutes
+    </div>
+
+    <div class="price">
+     {{ food.price | currency:'INR':'symbol':'1.0-0' }}
+    </div>
+
+    <button (click)="addToCart()">Add to Cart</button>
+  </div>
+
 </div>

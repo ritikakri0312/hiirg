@@ -1,41 +1,42 @@
-import { Component,OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CartService } from 'src/app/services/cart.service';
-import { UserService } from '../../../services/user.service';
-import { User } from '../../../shared/models/user';
+import { UserService } from 'src/app/services/user.service';
+
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent implements OnInit{
+export class HeaderComponent implements OnInit {
 
-  cartQuantity=0;
-  user!:User;
-  constructor(cartService:CartService,private userService:UserService){
-    cartService.getCartObservable().subscribe((newCart: any)=>{
-      this.cartQuantity = newCart.totalCount;
-    })
+  isAuth: boolean = false;
+  user: any;
+  cartQuantity: number = 0;
 
-    userService.userObservable.subscribe((newUser)=>{
-      this.user = newUser;
-    })
+  showMenu: boolean = false;
+
+  constructor(
+    private userService: UserService,
+    private cartService: CartService
+  ) {}
+
+  ngOnInit() {
+    this.userService.userObservable.subscribe(user => {
+      this.isAuth = !!user.token;
+      this.user = user;
+    });
+
+    this.cartService.getCartObservable().subscribe(cart => {
+      this.cartQuantity = cart.totalCount;
+    });
   }
-  
-  
-  ngOnInit(): void {}
 
-  
-  
-  logout(){
+  toggleMenu() {
+    this.showMenu = !this.showMenu;
+  }
+
+  logout() {
     this.userService.logout();
   }
- 
-  
-  get isAuth(){
-    return this.user.token;
-  }
-
 }
-
-
 

@@ -1,86 +1,45 @@
 import { Router } from "express";
 import { sample_foods, sample_tags } from "../data";
-import asyncHandler from  'express-async-handler';
-import { FoodModels } from "../models/food.model";
+
 const router = Router();
 
+// Get all foods
+router.get("/", (req, res) => {
+  res.send(sample_foods);
+});
 
-router.get("/seed",asyncHandler(
-  async (_req,res) => {
-    const foodsCount = await FoodModels.countDocuments();
-    
-    if (foodsCount>0){
-        res.send("Seed is already done!");
-        return;
-    }
-     await FoodModels.create(sample_foods);
-     res.send("Seed Is Done!");
-    }
-  ))
+// Search foods
+router.get("/search/:searchTerm", (req, res) => {
+  const searchTerm = req.params.searchTerm.toLowerCase();
+  const foods = sample_foods.filter(food =>
+    food.name.toLowerCase().includes(searchTerm)
+  );
+  res.send(foods);
+});
 
+// Get all tags
+router.get("/tags", (req, res) => {
+  res.send(sample_tags);
+});
 
-router.get("/", asyncHandler(
-    async (_req,res) =>{
-        const foods = await FoodModels.find();
-        res.send(foods);
-    }
-))
+// Get foods by tag
+router.get("/tag/:tagName", (req, res) => {
+  const tag = req.params.tagName.toLowerCase();
+  if (tag === "all") return res.send(sample_foods);
 
+  const foods = sample_foods.filter(food =>
+    food.tags.map((t: string) => t.toLowerCase()).includes(tag)
+  );
 
-router.get("/search/:searchTerm",asyncHandler(
-    async(req,res) =>{
-    const searchRegex = new RegExp(req.params.searchTerm,'i');
-    const foods = await FoodModels.find({name:{$regex:searchRegex}})
-    res.send(foods);
-    }
-))
+  res.send(foods);
+});
 
+// Get food by ID
+router.get("/:foodId", (req, res) => {
+  const food = sample_foods.find(food => food.id === req.params.foodId);
+  if (!food) return res.status(404).send({ message: "Food Not Found" });
 
-router.get("/tags",asyncHandler(
-    async(_req,res) =>{
-        const tags = await FoodModels.aggregate([
-            {
-               $unwind : '$tags'
-            },
-            {
-                $group:{
-                  _id: '$tags',
-                  count: {$sum: 1}
-                }
-            },
-            {
-                $project:{
-                   _id:0,
-                   name:'$_id',
-                   count:'$count'
-                }
-            }
-        ]) .sort({count: -1});
+  res.send(food);
+});
 
-        const all = {
-            name:'All',
-            count:await FoodModels.countDocuments()
-        }
-
-        tags.unshift(all);
-    res.send(tags);
-}
-))
-
-
-router.get("/tag/:tagName", asyncHandler (
-    async(req,res) =>{
-    const foods = await FoodModels.find({tags: req.params.tagName})
-    res.send(foods);
-    }
-))
-
-
-router.get("/:foodId",asyncHandler(
-    async(req,res)=>{
-    const food = await FoodModels.findById(req.params.foodId);
-     res.send(food);
-  }
-))
-
- export default router;
+export default router;

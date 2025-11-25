@@ -1,0 +1,75 @@
+.profile-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 80px;
+}
+
+.profile-card {
+  width: 420px;
+  background: #111;
+  padding: 30px;
+  text-align: center;
+  border-radius: 20px;
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.05);
+}
+
+.profile-photo {
+  width: 130px;
+  height: 130px;
+  margin: 0 auto 15px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid #ff4757;
+}
+
+.profile-photo img {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #ff3030;
+  box-shadow: 0 0 20px rgba(255, 50, 50, 0.5);
+  margin-bottom: 15px;
+}
+
+
+.profile-name {
+  font-size: 28px;
+  font-weight: 600;
+  color: #fff;
+  margin: 10px 0 5px;
+}
+
+.profile-email {
+  font-size: 16px;
+  color: #ccc;
+  margin-bottom: 25px;
+}
+
+.profile-section h3 {
+  font-size: 18px;
+  color: #bbb;
+  text-align: left;
+}
+
+.profile-address {
+  font-size: 16px;
+  color: #fff;
+  text-align: left;
+  margin-bottom: 25px;
+}
+
+.edit-btn {
+  background: #e63946;
+  padding: 12px 25px;
+  border-radius: 30px;
+  border: none;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.edit-btn:hover {
+  background: #c21828;
+}

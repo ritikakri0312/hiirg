@@ -1,23 +1,30 @@
 <div class="container">
     <div class="content">
+
         <app-title title="Order Form" fontSize="1.6rem"></app-title>
-          <form [formGroup]="checkoutForm">
-            <text-input [control]="fc.name" label="Name"></text-input>
-            <text-input [control]="fc.address" label="Address"></text-input>
-          </form>  
-          <order-items-list [order]="order"></order-items-list>
-     </div>
-     <div class="map">
-        <app-title
-        title="Choose Your Adress On Map"
-        fontSize="1.6rem"></app-title>
+
+        <form [formGroup]="checkoutForm">
+            <text-input label="Name" [control]="fc.name"></text-input>
+            <text-input label="Address" [control]="fc.address"></text-input>
+        </form>
+
+        <order-items-list [order]="order"></order-items-list>
+    </div>
+
+    <div class="map">
+        <app-title title="Choose Your Address On Map" fontSize="1.6rem"></app-title>
         <map [order]="order"></map>
-     </div>
-     <div class = "buttons-container">
-        <div class="buttons">
-            <button (click) = "createOrder()">
-                Go to payment
-            </button>
-        </div>
-     </div>
+    </div>
+
+  <button class="pay-button" (click)="openPayment()">
+  Proceed to Pay
+</button>
+
+<app-payment-modal
+  *ngIf="showPayment"
+  [amount]="totalPrice"
+  (paymentSuccess)="onPaymentSuccess()"
+  (closeModal)="showPayment = false">
+</app-payment-modal>
+
 </div>

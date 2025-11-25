@@ -1,0 +1,22 @@
+<div class="profile-container">
+  <div class="profile-card">
+
+   <div class="profile-photo">
+  <img [src]="user.imageUrl || 'assets/default-profile.png'" alt="Profile Photo">
+</div>
+
+
+    <h2 class="profile-name">{{ user.name }}</h2>
+    <p class="profile-email">{{ user.email }}</p>
+
+    <div class="profile-section">
+      <h3>Address</h3>
+      <p class="profile-address">Not Added</p>
+    </div>
+
+    <button class="edit-btn">Edit Profile</button>
+
+  </div>
+</div>
+
+

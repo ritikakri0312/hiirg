@@ -13,52 +13,77 @@ import { Order } from 'src/app/shared/models/Order';
   styleUrls: ['./checkout-page.component.css']
 })
 export class CheckoutPageComponent implements OnInit {
-  order:Order = new Order();
+
+  order: Order = new Order();
   checkoutForm!: FormGroup;
-  constructor(cartService:CartService,
-              private formBuilder: FormBuilder,
-              private userService: UserService,
-              private toastrService: ToastrService,
-              private orderService: OrderService,
-              private router: Router) {
-                const cart = cartService.getCart();
-                this.order.items = cart.items;
-                this.order.totalPrice = cart.totalPrice;
-              }
+
+  showPayment = false;        // <-- For mock payment modal
+  totalPrice: number = 0;     // <-- Always number (not undefined)
+
+  constructor(
+    private cartService: CartService,
+    private formBuilder: FormBuilder,
+    private userService: UserService,
+    private toastrService: ToastrService,
+    private orderService: OrderService,
+    private router: Router
+  ) {
+
+    // Load cart values
+    const cart = this.cartService.getCart();
+    this.order.items = cart.items;
+    this.order.totalPrice = cart.totalPrice;
+
+    this.totalPrice = cart.totalPrice;   // FIX: avoids undefined
+  }
 
   ngOnInit(): void {
-    let {name, address} = this.userService.currentUser;
+    const user = this.userService.currentUser;
+
+    // Prefill user data
     this.checkoutForm = this.formBuilder.group({
-      name:[name, Validators.required],
-      address:[address, Validators.required]
+      name: [user?.name || '', Validators.required],
+      address: [user?.address || '', Validators.required]
     });
   }
 
-  get fc(){
+  get fc() {
     return this.checkoutForm.controls;
   }
 
-  createOrder(){
-    if(this.checkoutForm.invalid){
-      this.toastrService.warning('Please fill the inputs', 'Invalid Inputs');
-      return;
-    }
+  // ------------------------------------------
+  //  OPEN MOCK PAYMENT MODAL
+  // ------------------------------------------
+openPayment() {
+  if (this.checkoutForm.invalid) {
+    this.toastrService.warning('Please fill in the required fields');
+    return;
+  }
 
-    if(!this.order.addressLatLng){
-      this.toastrService.warning('Please select your location on the map', 'Location');
-      return;
-    }
+  if (!this.order.addressLatLng) {
+    this.toastrService.warning('Select your location on the map');
+    return;
+  }
 
+  this.showPayment = true;
+}
+
+  // -------------------------------------------------
+  //  AFTER SUCCESSFUL MOCK PAYMENT (from modal emit)
+  // -------------------------------------------------
+  onPaymentSuccess() {
     this.order.name = this.fc.name.value;
     this.order.address = this.fc.address.value;
 
     this.orderService.create(this.order).subscribe({
-      next:() => {
-        this.router.navigateByUrl('/payment');
+      next: () => {
+        this.toastrService.success("Order placed successfully!");
+        this.router.navigateByUrl('/tracking');
       },
-      error:(errorResponse) => {
-        this.toastrService.error(errorResponse.error, 'Cart');
+      error: () => {
+        this.toastrService.error("Order failed");
       }
-    })
+    });
   }
+
 }

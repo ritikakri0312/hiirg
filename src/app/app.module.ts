@@ -32,6 +32,11 @@ import { MapComponent } from './components/partials/map/map.component';
 import { AuthInterceptor } from './auth/guards/auth.interceptor';
 // import { PaymentPageComponent } from './components/pages/payment-page/payment-page.component';
 import { PaypalButtonComponent } from './components/partials/paypal-button/paypal-button.component';
+import { ProfileComponent } from './components/profile/profile.component';
+import { PaymentModalComponent } from './components/payment-modal/payment-modal.component';
+
+
+
 
 
 //  import {RatingModule} from 'ngx-bootstrap/rating';
@@ -63,6 +68,8 @@ import { PaypalButtonComponent } from './components/partials/paypal-button/paypa
     MapComponent,
     // PaymentPageComponent,
     PaypalButtonComponent,
+    ProfileComponent,
+    PaymentModalComponent,
    
     
   ],
@@ -83,7 +90,12 @@ import { PaypalButtonComponent } from './components/partials/paypal-button/paypa
   providers: [
     
     { provide: HTTP_INTERCEPTORS,useClass:AuthInterceptor,multi:true},
-    { provide: HTTP_INTERCEPTORS,useClass:LoadingInterceptor,multi:true}
+    { provide: HTTP_INTERCEPTORS,useClass:LoadingInterceptor,multi:true},
+     {
+    provide: HTTP_INTERCEPTORS,
+    useClass: AuthInterceptor,
+    multi: true
+  }
   ],
   bootstrap: [AppComponent]
 })

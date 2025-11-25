@@ -1,25 +1,38 @@
 <header>
-    <div class = "container">
-        <a   routerLink = "/" class="logo"  >RG 😊 Food Corner!</a>
-        <nav>
-            <ul>
-                <li *ngIf = "!isAuth" >
-                    <a  routerLink = "/login" >Login</a>
-                </li>
-                <li *ngIf="isAuth" class="menu-container">
-                    <a routerLink="/dashboard">{{user.name}}</a>
-                    <div class="menu">
-                        <a routerLink="/profile">Profile</a>
-                        <a routerLink="/orders">Orders</a>
-                        <a (click)="logout()">Logout</a>
-                    </div>
-                </li>
-                <li>
-                    <a  routerLink="/cart-page"> 
-                    Cart<span *ngIf = "cartQuantity">{{cartQuantity}}</span>
-                    </a>
-                </li>
-            </ul>
-        </nav>
-    </div>
+  <div class="container">
+
+    <a routerLink="/" class="logo">RG 😊 Food Corner!</a>
+
+    <nav class="nav">
+      <ul>
+
+        <!-- USER LOGGED OUT -->
+        <li *ngIf="!isAuth">
+          <a routerLink="/login">Login</a>
+        </li>
+
+        <!-- USER LOGGED IN -->
+        <li *ngIf="isAuth" class="menu-container" (mouseenter)="showMenu = true" (mouseleave)="showMenu = false">
+
+          <a class="user-name">{{ user.name }} ▼</a>
+
+          <div class="menu" [class.show]="showMenu">
+            <a routerLink="/profile">My Profile</a>
+            <a routerLink="/orders">My Orders</a>
+            <a (click)="logout()">Logout</a>
+          </div>
+
+        </li>
+
+        <!-- CART -->
+        <li>
+          <a routerLink="/cart-page">Cart
+            <span *ngIf="cartQuantity">{{ cartQuantity }}</span>
+          </a>
+        </li>
+
+      </ul>
+    </nav>
+
+  </div>
 </header>

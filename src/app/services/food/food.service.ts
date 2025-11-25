@@ -4,7 +4,8 @@ import { Observable } from 'rxjs';
 import { FOODS_BY_SEARCH_URL, FOODS_BY_TAG_URL, FOODS_TAGS_URL, FOODS_URL, FOOD_BY_ID_URL } from 'src/app/shared/constants/urls';
 import { Food } from 'src/app/shared/models/food';
 import { Tag } from 'src/app/shared/models/tag';
-import { sample_foods, sample_tags } from 'src/data ';
+import { sample_foods } from 'src/assets/data/data';
+
 
 @Injectable({
   providedIn: 'root'
